@@ -1,5 +1,7 @@
 package BarleyBreak;
 
+import java.util.Random;
+
 /**
  * Created by Данил on 25.03.2016.
  */
@@ -17,6 +19,38 @@ public class Game {
 
     public int getCell(int i, int j){
         return pole[i][j];
+    }
+
+    public Game(int n, int m){
+        this.pole = new int[n][m];
+        do{
+            fillPole();
+        }while(!correctFill());
+    }
+
+    public Game(int n){
+        this.pole = new int[n][n];
+        do{
+            fillPole();
+        }while(!correctFill());
+    }
+
+    private void fillPole(){
+        int countCells = pole.length * pole[0].length;
+        int[] arrCells = new int[countCells];
+        Random rnd = new Random();
+        for(int i = 0 ; i < pole.length; i++){
+            for(int j = 0 ; j < pole[i].length;j++){
+                int cell = rnd.nextInt(countCells);
+                while(arrCells[cell] == 1)
+                    cell = rnd.nextInt(countCells);
+                pole[i][j] = cell;
+            }
+        }
+    }
+
+    private boolean correctFill(){
+        return true;
     }
 
     //перемещение ячейки по адресу (i,j)
@@ -48,12 +82,15 @@ public class Game {
         return false;
     }
 
+
+    //меняет метсами ячейки по координатам (i1,j1) и (i2,j2)
     private void swap(int i1, int j1, int i2, int j2){
         int help = pole[i1][j1];
         pole[i1][j1] = pole[i2][j2];
         pole[i2][j2] = help;
     }
 
+    //метод, проверяющий, является ли игра законченной
     public boolean isFinish(){
         if (pole[pole.length-1][pole[1].length-1] != 0)
             return false;

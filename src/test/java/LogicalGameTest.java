@@ -212,5 +212,27 @@ public class LogicalGameTest {
         Assert.assertTrue("Игра не закончена!",game.isFinish());
     }
 
+    //Тест на генерацию случайного поля n на m
+    @Test
+    public void testGenerateGame1(){
+        Game game = new Game(4,4);
+        Assert.assertNotNull("Объект не создался", game);
+    }
+
+    //Тест на генерацию случайного поля n на n
+    @Test
+    public void testGenerateGame2(){
+        Game game = new Game(4);
+        Assert.assertNotNull("Объект не создался", game);
+    }
+
+    //Тест на генерацию случайного поля n на n
+    @Test
+    public void testGenerateGame3(){
+        Game game1 = new Game(4);
+        Game game2 = new Game(4,4);
+        Assert.assertNotEquals("Объект один и тотже", game1, game2);
+    }
+
 
 }
