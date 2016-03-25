@@ -54,4 +54,10 @@ public class Game {
         pole[i2][j2] = help;
     }
 
+    public boolean isFinish(){
+        if (pole[pole.length-1][pole[1].length-1] == 0)
+            return true;
+        return false;
+    }
+
 }
