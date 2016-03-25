@@ -160,4 +160,16 @@ public class LogicalGameTest {
         game.move(3,3); //двигаем 1, она должна переехать на пустую ячейку.
         Assert.assertEquals("Не правильно поехало!",game.getCell(3,2),15);
     }
+
+    //Тест на проверку конечного стостояния игры
+    @Test
+    public void testFinishGame(){
+        int[][] pole =
+                {{1,2,3,4},    //пустая ячейка по координатам (2,2)
+                        {5,6,7,8},
+                        {9,10,11,12},
+                        {13,14,15,0}};
+        Game game = new Game(pole);
+        Assert.assertTrue("Не правильно поехало!",game.isFinish());
+    }
 }
