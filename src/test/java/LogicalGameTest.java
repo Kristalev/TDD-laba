@@ -67,6 +67,6 @@ public class LogicalGameTest {
                         {12,13,14,15}};
         Game game = new Game(pole);
         game.move(0,0); //двигаем 1, она должна переехать на пустую ячейку.
-        Assert.assertEquals("Не правильно поехало!",game.getCell(2,2),7);
+        Assert.assertEquals("Не правильно поехало!",game.getCell(1,0),1);
     }
 }
