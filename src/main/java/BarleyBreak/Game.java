@@ -55,9 +55,19 @@ public class Game {
     }
 
     public boolean isFinish(){
-        if (pole[pole.length-1][pole[1].length-1] == 0)
-            return true;
-        return false;
+        if (pole[pole.length-1][pole[1].length-1] != 0)
+            return false;
+        else{
+            for(int i = 0 ; i < pole.length; i++){
+                for(int j = 1 ; j<pole[i].length; j++){
+                    if (j == pole[i].length-1 && i == pole.length-1)
+                        return true;
+                    if(pole[i][j-1] > pole[i][j])
+                        return false;
+                }
+            }
+        }
+        return true;
     }
 
 }

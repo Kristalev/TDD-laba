@@ -182,6 +182,6 @@ public class LogicalGameTest {
                         {9,10,11,12},
                         {13,14,15,0}};
         Game game = new Game(pole);
-        Assert.assertTrue("Игра не закончена!",game.isFinish());
+        Assert.assertTrue("Игра не закончена!",!game.isFinish());
     }
 }
