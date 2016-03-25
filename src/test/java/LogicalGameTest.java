@@ -1,3 +1,4 @@
+import BarleyBreak.Game;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -7,7 +8,7 @@ import org.junit.Test;
 public class LogicalGameTest {
     @Test
     public void testMoving(){
-        double[][] pole =
+        int[][] pole =
                 {{1,1,1,1},    //пустая ячейка по координатам (2,2)
                 {1,1,1,1},
                 {1,1,0,1},
@@ -16,5 +17,4 @@ public class LogicalGameTest {
         game.move(2,3); //двигаем единичку, она должна переехать на пустую ячейку.
         Assert.assertEquals("Не правильно поехало!",game.getCell(2,2),1);
     }
-
 }
