@@ -16,12 +16,20 @@ public class Game {
     }
 
     public int getCell(int i, int j){
-        return 1;
+        return pole[i][j];
     }
 
     //перемещение ячейки по адресу (i,j)
     public boolean move(int i, int j){
+        if (this.pole[i][j-1] == 0)
+            swap(i,j,i,j-1);
         return true;
+    }
+
+    private void swap(int i1, int j1, int i2, int j2){
+        int help = pole[i1][j1];
+        pole[i1][j1] = pole[i2][j2];
+        pole[i2][j2] = help;
     }
 
 }
