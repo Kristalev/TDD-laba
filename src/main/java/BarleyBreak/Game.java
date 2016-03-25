@@ -16,7 +16,7 @@ public class Game {
     }
 
     public int getCell(int i, int j){
-        return this.pole[i][j];
+        return 1;
     }
 
     //перемещение ячейки по адресу (i,j)
