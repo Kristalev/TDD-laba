@@ -2,6 +2,7 @@ import BarleyBreak.Game;
 import org.junit.Assert;
 import org.junit.Test;
 
+
 /**
  * Created by Данил on 21.03.2016.
  */
@@ -182,6 +183,34 @@ public class LogicalGameTest {
                         {9,10,11,12},
                         {13,14,15,0}};
         Game game = new Game(pole);
-        Assert.assertTrue("Игра не закончена!",!game.isFinish());
+        Assert.assertTrue("Игра закончена!",!game.isFinish());
     }
+
+    //Тест на проверку конечного стостояния игры
+    @Test
+    public void testFinishGame3(){
+        int[][] pole =
+                {{1,2,3,4},    //пустая ячейка по координатам (2,2)
+                        {5,6,7,8},
+                        {9,10,11,12},
+                        {13,14,0,15}};
+        Game game = new Game(pole);
+        Assert.assertTrue("Игра закончена!",!game.isFinish());
+    }
+
+    //Тест на проверку конечного стостояния игры и перемещения фишечки
+    @Test
+    public void testFinishGame4(){
+        int[][] pole =
+                {{1,2,3,4},    //пустая ячейка по координатам (2,2)
+                        {5,6,7,8},
+                        {9,10,11,12},
+                        {13,14,0,15}};
+        Game game = new Game(pole);
+        Assert.assertTrue("Игра закончена!",!game.isFinish());
+        game.move(3,3);
+        Assert.assertTrue("Игра не закончена!",game.isFinish());
+    }
+
+
 }
