@@ -163,9 +163,21 @@ public class LogicalGameTest {
 
     //Тест на проверку конечного стостояния игры
     @Test
-    public void testFinishGame(){
+    public void testFinishGame1(){
         int[][] pole =
                 {{1,2,3,4},    //пустая ячейка по координатам (2,2)
+                        {5,6,7,8},
+                        {9,10,11,12},
+                        {13,14,15,0}};
+        Game game = new Game(pole);
+        Assert.assertTrue("Игра не закончена!",game.isFinish());
+    }
+
+    //Тест на проверку конечного стостояния игры
+    @Test
+    public void testFinishGame2(){
+        int[][] pole =
+                {{2,1,3,4},    //пустая ячейка по координатам (2,2)
                         {5,6,7,8},
                         {9,10,11,12},
                         {13,14,15,0}};
