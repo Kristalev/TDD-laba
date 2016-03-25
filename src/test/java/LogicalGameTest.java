@@ -53,7 +53,7 @@ public class LogicalGameTest {
                         {9,10,0,11},
                         {12,13,14,15}};
         Game game = new Game(pole);
-        game.move(1,3); //двигаем 7, она должна переехать на пустую ячейку.
+        game.move(1,2); //двигаем 7, она должна переехать на пустую ячейку.
         Assert.assertEquals("Не правильно поехало!",game.getCell(2,2),7);
     }
 }

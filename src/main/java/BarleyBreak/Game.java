@@ -21,9 +21,15 @@ public class Game {
 
     //перемещение ячейки по адресу (i,j)
     public boolean move(int i, int j){
-        if (this.pole[i][j-1] == 0)
-            swap(i,j,i,j-1);
-        return true;
+        if (this.pole[i][j-1] == 0) {
+            swap(i, j, i, j - 1);
+            return true;
+        }
+        if (this.pole[i+1][j] == 0){
+            swap(i,j,i+1,j);
+            return true;
+        }
+        return false;
     }
 
     private void swap(int i1, int j1, int i2, int j2){
