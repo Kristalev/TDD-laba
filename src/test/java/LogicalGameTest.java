@@ -56,4 +56,17 @@ public class LogicalGameTest {
         game.move(1,2); //двигаем 7, она должна переехать на пустую ячейку.
         Assert.assertEquals("Не правильно поехало!",game.getCell(2,2),7);
     }
+
+    //А если райнюю фишку переместить вниз
+    @Test
+    public void testMoving5(){
+        int[][] pole =
+                {{1,2,3,4},    //пустая ячейка по координатам (2,2)
+                        {0,5,6,8},
+                        {9,10,11,12},
+                        {12,13,14,15}};
+        Game game = new Game(pole);
+        game.move(0,0); //двигаем 1, она должна переехать на пустую ячейку.
+        Assert.assertEquals("Не правильно поехало!",game.getCell(2,2),7);
+    }
 }
