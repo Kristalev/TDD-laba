@@ -248,6 +248,46 @@ public class LogicalGameTest {
 
     }
 
+    //не все комбинации пятнашек могут быть собраны.
+    //тест на корректность проверачной функции
+    @Test
+    public void testCorrectPole2(){
+        int[][] pole =
+                {{1,2,3,4},    //пустая ячейка по координатам (2,2)
+                        {5,6,7,8},
+                        {9,10,11,12},
+                        {13,14,0,15}};
+        Assert.assertTrue("Решения нет!",testFunctionForCorrect(pole));
+
+    }
+
+    //не все комбинации пятнашек могут быть собраны.
+    //тест на корректность проверачной функции
+    @Test
+    public void testCorrectPole3(){
+        Game game = new Game(4);
+        Assert.assertTrue("Решение нет",testFunctionForCorrect(game.getPole()));
+
+    }
+
+    //не все комбинации пятнашек могут быть собраны.
+    //тест на корректность проверачной функции
+    @Test
+    public void testCorrectPole4(){
+        Game game = new Game(4);
+        Assert.assertTrue("Решение нет",testFunctionForCorrect(game.getPole()));
+
+    }
+
+    //не все комбинации пятнашек могут быть собраны.
+    //тест на корректность проверачной функции
+    @Test
+    public void testCorrectPole5(){
+        Game game = new Game(4);
+        Assert.assertTrue("Решение нет",testFunctionForCorrect(game.getPole()));
+
+    }
+
     //Вспомогательный метод, проверяющий, является ли pole сходимым к решению
     private boolean testFunctionForCorrect(int[][] pole){
         int inv = 0 ;
