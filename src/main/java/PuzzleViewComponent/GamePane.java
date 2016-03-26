@@ -4,16 +4,20 @@ import com.sun.javafx.event.CompositeEventHandler;
 import javafx.scene.layout.Pane;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * Created by Данил on 26.03.2016.
  */
 public class GamePane extends Pane implements Composite{
+    private ArrayList<Composite> arrCells;
     public GamePane(){
         super();
+        arrCells = new ArrayList<Composite>();
     }
-    public void addElement(Composite elem) {
 
+    public void addElement(Composite elem) {
+        arrCells.add(elem);
     }
 
     public void removeElement(Composite elem) {
@@ -21,7 +25,7 @@ public class GamePane extends Pane implements Composite{
     }
 
     public Composite getChild(int index) {
-        return null;
+        return arrCells.get(index);
     }
 
     public void showElem() {
