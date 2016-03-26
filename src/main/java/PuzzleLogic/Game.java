@@ -1,4 +1,4 @@
-package BarleyBreak;
+package PuzzleLogic;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-import BarleyBreak.Game;
+import PuzzleLogic.Game;
 import org.junit.Assert;
 import org.junit.Test;
 
