@@ -33,4 +33,14 @@ public class CompositeTest {
         Assert.assertEquals("Ячейка не добавлена",gamePane.getChild(0),cell);
     }
 
+    @Test
+    public void removeTest1(){
+        GamePane gamePane = new GamePane();
+        Cell cell = new Cell();
+        gamePane.addElement(cell);
+        gamePane.removeElement(cell);
+        Assert.assertNull("Ячейка не удалена",gamePane.getChild(0));
+    }
+
+
 }
