@@ -6,6 +6,9 @@ import javafx.scene.control.Button;
  * Created by Данил on 26.03.2016.
  */
 public class Cell extends Button implements Composite {
+    public Cell(){
+        super();
+    }
     public void addElement(Composite elem) {
 
     }

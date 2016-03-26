@@ -9,6 +9,9 @@ import java.awt.*;
  * Created by Данил on 26.03.2016.
  */
 public class GamePane extends Pane implements Composite{
+    public GamePane(){
+        super();
+    }
     public void addElement(Composite elem) {
 
     }
