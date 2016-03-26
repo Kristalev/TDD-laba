@@ -35,6 +35,10 @@ public class Game {
         }while(!correctFill());
     }
 
+    public int[][] getPole(){
+        return this.pole;
+    }
+
     private void fillPole(){
         int countCells = pole.length * pole[0].length;
         int[] arrCells = new int[countCells];

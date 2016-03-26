@@ -235,4 +235,47 @@ public class LogicalGameTest {
     }
 
 
+    //не все комбинации пятнашек могут быть собраны.
+    //тест на корректность проверачной функции
+    @Test
+    public void testCorrectPole1(){
+        int[][] pole =
+                {{1,2,3,4},    //пустая ячейка по координатам (2,2)
+                        {5,6,7,8},
+                        {9,10,11,12},
+                        {13,15,14,0}};
+        Assert.assertTrue("Решение есть",!testFunctionForCorrect(pole));
+
+    }
+
+    //Вспомогательный метод, проверяющий, является ли pole сходимым к решению
+    private boolean testFunctionForCorrect(int[][] pole){
+        int inv = 0 ;
+        for(int i = 0 ; i < pole.length ; i ++){
+            for(int j = 0 ; j < pole[i].length ; j++){
+                if (pole[i][j] != 0){
+                    for(int k = i; k < pole.length; k++){
+                        if (k == i && j + 1 < pole[k].length)
+                            for(int l = j+1 ; l < pole[k].length; l++){
+                                if(pole[k][l] < pole[i][j])
+                                    inv++;
+                            }
+                        else
+                            for(int l = 0 ; l < pole[k].length; l++){
+                                if(pole[k][l] < pole[i][j])
+                                    inv++;
+                            }
+                    }
+                }else{
+                    inv += i + 1;
+                }
+            }
+        }
+        if (inv % 2 == 0)
+            return true;
+        else
+            return false;
+    }
+
+
 }
