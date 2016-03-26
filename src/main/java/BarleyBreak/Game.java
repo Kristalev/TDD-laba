@@ -49,12 +49,37 @@ public class Game {
                 while(arrCells[cell] == 1)
                     cell = rnd.nextInt(countCells);
                 pole[i][j] = cell;
+                arrCells[cell] = 1;
             }
         }
     }
 
     private boolean correctFill(){
-        return true;
+        int inv = 0 ;
+        for(int i = 0 ; i < pole.length ; i ++){
+            for(int j = 0 ; j < pole[i].length ; j++){
+                if (pole[i][j] != 0){
+                    for(int k = i; k < pole.length; k++){
+                        if (k == i && j + 1 < pole[k].length)
+                            for(int l = j+1 ; l < pole[k].length; l++){
+                                if(pole[k][l] < pole[i][j])
+                                    inv++;
+                            }
+                        else
+                            for(int l = 0 ; l < pole[k].length; l++){
+                                if(pole[k][l] < pole[i][j])
+                                    inv++;
+                            }
+                    }
+                }else{
+                    inv += i + 1;
+                }
+            }
+        }
+        if (inv % 2 == 0)
+            return true;
+        else
+            return false;
     }
 
     //перемещение ячейки по адресу (i,j)
