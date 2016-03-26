@@ -21,11 +21,16 @@ public class GamePane extends Pane implements Composite{
     }
 
     public void removeElement(Composite elem) {
-
+        arrCells.remove(elem);
     }
 
     public Composite getChild(int index) {
-        return arrCells.get(index);
+        try {
+            return arrCells.get(index);
+        }catch (IndexOutOfBoundsException e){
+            return null;
+        }
+
     }
 
     public void showElem() {

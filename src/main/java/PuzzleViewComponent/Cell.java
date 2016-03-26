@@ -12,11 +12,9 @@ public class Cell extends Button implements Composite {
     }
 
     public void addElement(Composite elem) {
-
     }
 
     public void removeElement(Composite elem) {
-
     }
 
     public Composite getChild(int index) {
